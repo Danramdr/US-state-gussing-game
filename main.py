@@ -33,5 +33,6 @@ while len(guessed_state) < 50:
         # the condition was checkes inside the csv file,is equal to the user enter name and print the entire row
         new_statement = data[data.state == user_input_state]
         t.goto(int(new_statement.x), int(new_statement.y))
+        
         # item() function return the current value
         t.write(new_statement.state.item())
