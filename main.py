@@ -12,10 +12,6 @@ turtle.shape(image)
 
 data = pandas.read_csv("50_states.csv")
 all_states = data.state.to_list()
-#print(all_states)
-
-
-# print(user_input_state)
 
 guessed_state = []
 
@@ -26,9 +22,6 @@ while len(guessed_state) < 50:
     if user_input_state == "Exit":
         #using list comperhesion method
         missing_names = [state for state in all_states if state not in guessed_state]
-        # for states in all_states:
-        #     if states not in guessed_state:
-        #         missing_names.append(states)
         new_file = pandas.DataFrame(missing_names)
         new_file.to_csv("missing_names.csv")
         break
@@ -42,8 +35,3 @@ while len(guessed_state) < 50:
         t.goto(int(new_statement.x), int(new_statement.y))
         # item() function return the current value
         t.write(new_statement.state.item())
-
-
-# screen.exitonclick()
-
-
